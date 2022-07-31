@@ -116,6 +116,7 @@ body {
 .wrapper .preview-img {
 	flex-grow: 1;
 	display: flex;
+	overflow: hidden;
 	align-items: center;
 	justify-content: center;
 	margin-left: 20px;
