@@ -11,6 +11,11 @@ let brightness = 100,
 	inversion = 0,
 	grayscale = 0
 
+const applyFilter = () => {
+	console.log('applyFilter')
+	previewImg.style.filter = `brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) grayscale(${grayscale}%)`
+}
+
 const loadImage = () => {
 	let file = fileInput.files[0] // 获取用户选择的图片
 	if (!file) return // 如果没有选择，return 出去
@@ -59,6 +64,7 @@ const updateFilter = () => {
 	} else if (selectedFilter.id === 'grayscale') {
 		grayscale = filterSlider.value
 	}
+	applyFilter()
 }
 
 fileInput.addEventListener('change', loadImage)
